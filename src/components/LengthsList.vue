@@ -18,7 +18,7 @@
                     />
                     <b-progress-bar
                         :key="-1-index"
-                        :value="cutWidth"
+                        :value="getCutWidth"
                         striped
                         variant="dark"
                     />
@@ -46,6 +46,11 @@
                 type: Result,
                 required: true
             }
+        },
+        computed: {
+          getCutWidth: function() {
+            return this.cutWidth / this.maxLength < 0.1 ? this.maxLength / 500 : this.cutWidth
+          }
         }
     }
 </script>
