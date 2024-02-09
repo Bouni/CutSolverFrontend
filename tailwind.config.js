@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,vue}",
   ],
   daisyui: {
-    themes: ["nord"],
+    themes: [
+      {
+        nord: { ...require("daisyui/src/theming/themes")["nord"] },
+        dim: {
+          ...require("daisyui/src/theming/themes")["dim"],
+          secondary: "slate"
+        }
+      }
+    ],
   },
   theme: {
     extend: {},
