@@ -5,9 +5,11 @@
       <div>Solved using bruteforce. Calculation took 5.4ms.</div>
       <SolvedStock />
     </div>
+    <Export />
   </div>
 </template>
 
 <script setup lang="ts">
 import SolvedStock from "@/components/SolvedStock.vue"
+import Export from "@/components/Export.vue"
 </script>

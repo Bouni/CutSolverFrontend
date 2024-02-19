@@ -6,7 +6,7 @@
         <div class="w-full">
           <Input />
         </div>
-        <div class="w-52 flex justify-center items-center">
+        <div class="w-64 flex justify-center items-center">
           <SolveButton />
         </div>
         <div class="w-full">
