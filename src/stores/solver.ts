@@ -1,5 +1,6 @@
 import type { Item } from "@/models/Item"
 import { defineStore } from 'pinia'
+import { api } from "@/api"
 
 export const useSolverStore = defineStore('solver', {
   state: () => ({
@@ -28,12 +29,19 @@ export const useSolverStore = defineStore('solver', {
         quantity: 4,
         length: 250
       }
-    ]
+    ],
+    stockData: {
+      length: 1500,
+      kerf: 3
+    },
+    solverResult: null
   }),
   actions: {
     dropItem(id: number) {
-      console.log(id)
       this.inputData.splice(this.inputData.findIndex(i => i.id === id), 1)
+    },
+    removeAll() {
+      this.inputData = []
     },
     addItem(item: Item) {
       const next_id = this.inputData.reduce((p, c) => ((p.id > c.id) ? p : c), 0)
@@ -42,6 +50,19 @@ export const useSolverStore = defineStore('solver', {
         name: item.name,
         quantity: item.quantity,
         length: item.length
+      })
+    },
+    solve() {
+      const payload = {
+        cut_width: this.stockData.kerf,
+        max_length: this.stockData.length,
+        target_sizes: this.inputData.map((item) => (delete item["id"], item))
+      }
+      api.post("solve", payload).then((result) => {
+        this.solverResult = result.data
+      }).catch((error) => {
+        // TODO:display error properly
+        console.log(error)
       })
     }
   }
