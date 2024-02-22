@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer footer-center p-4 bg-base-300 text-base-content absolute bottom-0">
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content fixed bottom-0">
     <aside>
       <p>CutSolver v{{ version }}, made with <b-icon-heart-fill class="inline" /> by
         <a href="http://modisch.me" target="_blank" class="hover:text-sky-600">Modisch Fabrications</a> |
