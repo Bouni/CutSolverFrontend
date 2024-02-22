@@ -4,7 +4,7 @@
       <label class="form-control w-full">
         <div class="label">
           <span class="label-text">Stock length
-            <div class="tooltip" data-tip="The length of your raw material">
+            <div class="tooltip tooltip-right" data-tip="The length of your raw material">
               <b-icon-info-circle width="12px" height="12px" class="ml-1" />
             </div>
           </span>
@@ -16,7 +16,7 @@
       <label class="form-control w-full">
         <div class="label">
           <span class="label-text">Kerf width
-            <div class="tooltip" data-tip="The width of your saw blade for example ...">
+            <div class="tooltip tooltip-right" data-tip="The width of your saw blade for example ...">
               <b-icon-info-circle width="12px" height="12px" class="ml-1" />
             </div>
           </span>

@@ -8,7 +8,7 @@
       </div>
     </label>
     <input id="csv" name="csv" type="file" @change="onFileSelected" class="absolute w-full h-full opacity-0">
-    <div class="tooltip ml-2" data-tip="Import a CSV file with input data">
+    <div class="tooltip tooltip-right ml-2" data-tip="Import a CSV file with input data">
       <b-icon-info-circle width="12px" height="12px" class="ml-1" />
     </div>
   </div>
