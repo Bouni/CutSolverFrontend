@@ -9,7 +9,7 @@
             </div>
           </span>
         </div>
-        <input type="number" placeholder="1200" class="input input-bordered w-full" />
+        <input type="number" placeholder="1200" class="input input-bordered w-full" v-model="store.stockData.length" />
       </label>
     </div>
     <div class="basis-1/2">
@@ -21,9 +21,15 @@
             </div>
           </span>
         </div>
-        <input type="number" placeholder="3" class="input input-bordered w-full" />
+        <input type="number" placeholder="3" class="input input-bordered w-full" v-model="store.stockData.kerf" />
       </label>
     </div>
     <div class="w-14"></div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useSolverStore } from '@/stores/solver'
+
+const store = useSolverStore()
+</script>
