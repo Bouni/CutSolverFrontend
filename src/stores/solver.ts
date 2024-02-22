@@ -34,7 +34,9 @@ export const useSolverStore = defineStore('solver', {
       length: 1500,
       kerf: 3
     },
-    solverResult: null
+    solverResult: {
+      lengths: []
+    }
   }),
   actions: {
     dropItem(id: number) {
@@ -63,6 +65,11 @@ export const useSolverStore = defineStore('solver', {
       }).catch((error) => {
         // TODO:display error properly
         console.log(error)
+      })
+    },
+    getCSVData() {
+      return this.solverResult.lengths.map((stock, i) => {
+        return stock.map((item, j) => item[0])
       })
     }
   }
