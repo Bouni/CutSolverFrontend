@@ -7,7 +7,7 @@
         <th class="text-lg">Length</th>
         <th class="w-12 p-1">
           <button class="btn btn-ghost">
-            <b-icon-trash width="24" height="24" />
+            <b-icon-trash width="24" height="24" @click="store.removeAll()" />
           </button>
         </th>
       </tr>
@@ -15,13 +15,13 @@
     <tbody>
       <tr v-for="item in store.inputData" class="border-0">
         <td class="p-1">
-          <input type="text" class="input w-full" v-model="item.name" />
+          <input type="text" class="input input-bordered w-full" v-model="item.name" />
         </td>
         <td class="p-1">
-          <input type="number" class="input w-full" v-model="item.quantity" />
+          <input type="number" class="input input-bordered w-full" v-model="item.quantity" />
         </td>
         <td class="p-1">
-          <input type="number" class="input w-full" v-model="item.length" />
+          <input type="number" class="input input-bordered w-full" v-model="item.length" />
         </td>
         <td class="p-1">
           <button class="btn btn-ghost">
@@ -31,13 +31,13 @@
       </tr>
       <tr class="border-0 bottom_row">
         <td class="p-1">
-          <input type="text" placeholder="Part" class="input w-full" v-model="new_item.name" />
+          <input type="text" placeholder="Part" class="input input-bordered w-full" v-model="new_item.name" />
         </td>
         <td class="p-1">
-          <input type="number" min="1" placeholder="1" class="input w-full" v-model="new_item.quantity" />
+          <input type="number" min="1" placeholder="1" class="input input-bordered w-full" v-model="new_item.quantity" />
         </td>
         <td class="p-1">
-          <input type="number" min="1" placeholder="100" class="input w-full" v-model="new_item.length" />
+          <input type="number" min="1" placeholder="100" class="input input-bordered w-full" v-model="new_item.length" />
         </td>
         <td class="p-1">
           <button class="btn btn-ghost">
@@ -69,6 +69,7 @@ const new_item = ref<Item>({ name: '', quantity: 0, length: 0 })
 const addItem = () => {
   if (new_item.value.quantity && new_item.value.length) {
     store.addItem(new_item.value)
+    new_item.value = { name: '', quantity: 0, length: 0 }
   }
 }
 </script>
