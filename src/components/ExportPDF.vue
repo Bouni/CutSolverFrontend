@@ -22,6 +22,8 @@ const downloadPDF = () => {
       format: 'a4',
       putOnlyUsedFonts: true
     });
+    pdf.setFontSize(10)
+    pdf.text(`Name: ${store.stockData.name} | Length: ${store.stockData.length} | Kerf: ${store.stockData.kerf}`, 105, 15, { align: "center", baseline: "top" })
     store.solverResult.lengths.forEach((stock) => {
       drawStock(pdf, stock, store.solverResult.job.max_length)
     })

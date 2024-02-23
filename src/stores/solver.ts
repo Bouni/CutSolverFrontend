@@ -31,6 +31,7 @@ export const useSolverStore = defineStore('solver', {
       }
     ],
     stockData: {
+      name: "",
       length: 1500,
       kerf: 3
     },
